@@ -61,6 +61,8 @@ bool Application::shouldExit() {
 }
 
 void Application::printUI() {
+    PrintConsole *console =consoleGetDefault();
+
     clearScreen();
     printf("Currently pressed buttons:\t\t\t(time: %7.3fs)\n", gettime() / 1000.0);
 
@@ -107,6 +109,9 @@ void Application::printUI() {
     cprintf(60, "\tB: %4.1f\n", counterTenSec.averageHzB);
     cprintf(60, "\tX: %4.1f\n", counterTenSec.averageHzX);
     cprintf(60, "\tY: %4.1f\n", counterTenSec.averageHzY);
+
+    moveCursor(console->consoleHeight, 1);
+    printf("Press + to exit");
 }
 
 /* #endregion Private */
