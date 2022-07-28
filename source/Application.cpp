@@ -17,6 +17,7 @@ bool Application::update() {
     if (pressedButtons & HidNpadButton_Minus) {
         // Reset input counters
         counterOneSec.reset();
+        counterFiveSec.reset();
         counterTenSec.reset();
     }
 
@@ -110,7 +111,8 @@ void Application::printUI() {
     cprintf(60, "\tX: %4.1f\n", counterTenSec.averageHzX);
     cprintf(60, "\tY: %4.1f\n", counterTenSec.averageHzY);
 
-    moveCursor(console->consoleHeight, 1);
+    moveCursor(console->consoleHeight - 1, 1);
+    printf("Press - to reset averages\n");
     printf("Press + to exit");
 }
 
