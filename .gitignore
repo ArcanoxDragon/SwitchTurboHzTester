@@ -1,6 +1,9 @@
 # Prerequisites
 *.d
 
+# Output folder
+build/
+
 # Compiled Object files
 *.slo
 *.lo
@@ -30,3 +33,6 @@
 *.exe
 *.out
 *.app
+*.elf
+*.nacp
+*.nro
